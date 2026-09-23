@@ -1,16 +1,24 @@
-function reverse(x){
-   
-    return Number(String(x).split('').reverse().join(''));
+
+
+let number = prompt("enter num to reverse");
+let reversed = "";
+
+for (let i = 5; i >= 0; i--) {
+    reversed += number[i];
 }
-reverse(3456);
-console.log(reverse(3456));
+
+console.log(reversed);
+
+
+
+
 
 for(i=0;i<=15;i++){
 if(i%2==0){
-    console.log( i+"even");
+    console.log( i+" is even");
 }
 else{
-console.log( i+"odd");
+console.log( i+" is odd");
 }
 }
 
@@ -23,13 +31,15 @@ console.log( i+"odd");
 
 let num=prompt("pleasw enter a number");
 let string="";
-for(i=0;i<=num.length;i++){
+for(i=0;i<num.length;i++){
     string+=num[i];
     if(num[i]%2==0&&num[i+1]%2==0){
         string+="-";
+        
     }
-    console.log(string)
+    
 }
+console.log(string);
 
 
 
