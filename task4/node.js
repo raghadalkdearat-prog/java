@@ -69,16 +69,17 @@ fontdeco[2].onclick = updateStyle;
 
 
 
-let image = document.getElementsByClassName('cat')[0];
-let buttons = document.querySelectorAll('.button'); 
+let image = document.getElementsByClassName('cat-img')[0];
+let button1 = document.getElementsByClassName('button1')[0];
+let button2 = document.getElementsByClassName('button2')[0];
 
 
-buttons[0].onclick = function() {
+button1.onclick = function() {
     image.style.borderRadius = '0';
     
 };
 
-buttons[1].onclick = function() {
+button2.onclick = function() {
     image.style.borderRadius = '50%';
 };
 
