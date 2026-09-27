@@ -1,0 +1,27 @@
+.container{
+    
+    width: 500px;
+    border: solid #ff0000;
+      margin: 10px;
+    
+}
+
+
+.cont2{
+    border: solid blue;
+    height: 100px;
+    width: 400px;
+    margin: 10px;
+    text-align: center;
+}
+
+.cat-img{
+    width:300px;
+     height:200px;
+    
+}
+
+.button{
+    margin: 10px;
+  
+}

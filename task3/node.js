@@ -1,50 +1,87 @@
-let menue=[
-    {name:"pizza",price:"6$",category:"mainMeal",available:"yes"},
-    {name:"zinger",price:"3$",category:"mainMeal",available:"NO"},
-    {name:"burger",price:"6$",category:"mainMeal",available:"yes"},
-    {name:"frize",price:"2$",category:"sideMeal",available:"yes"},
-    {name:"Shawarma",price:"2.5$",category:"mainMeal",available:"yes"}
-];
+
+let nAme = document.getElementById('user-name');                 
+let oRder = document.getElementsByTagName('select')[0];  
+let but = document.querySelector('.button'); 
+
+but.onclick = function() {
+   
+    let Name = nAme.value;
+    let Order = oRder.value;
+
+    document.write("Hello " + Name + "! Your order is " + Order);
+};
+
+
+but.onmouseover = function(){
+    but.style.backgroundColor='red';
+}
+but.onmouseout = function(){
+      but.style.backgroundColor='white';
+}
 
 
 
 
 
-let foodname=prompt("enter your meal(pizza,zinger,burger,frize,Shawarma");
-let i=0;
-while (i < menue.length) {
+let fontFamily = document.getElementById('font');  
+let fontSize = document.getElementById('size');  
+let fontdeco = document.querySelectorAll('.font-style');
+let text = document.querySelector('.cont2 p');
+
+function updateStyle() {
     
-  
-    if (menue[i].name === foodname && menue[i].available === "NO") {
-        alert("Sorry, " + foodname + " is not available!");
-       foodname=prompt("enter your meal(pizza,zinger,burger,frize,Shawarma");
-        i = 0;
-        continue;
+    text.style.fontFamily = fontFamily.value;
+    text.style.fontSize = fontSize.value;
+
+   
+    if (fontdeco[0].checked) {
+        text.style.fontStyle = 'italic';
+    } else {
+        text.style.fontStyle = 'normal';
     }
 
-    i++; 
-    
-}
-
-
-
-
-
-
-function displayMenu(){
- document.write("<p> menue list</p> <hr>");
-   for(let x of menue){
-    if(x.name==foodname){
-    document.write("<p> name:"+x.name+"<br></p>");
-     document.write("<p> price:"+x.price+"<br></p>");
-      document.write("<p> is it available:"+x.available+"<br></p>");
-       document.write("<p> category"+x.category+"<br></p>");
+   
+    if (fontdeco[1].checked) {
+        text.style.fontWeight = 'bold';
+    } else {
+        text.style.fontWeight = 'normal';
     }
 
-}
+    
+    if (fontdeco[2].checked) {
+        text.style.textDecoration = 'underline';
+    } else {
+        text.style.textDecoration = 'none';
+    }
 }
 
-displayMenu();
+
+fontFamily.onchange = updateStyle;
+fontSize.onchange = updateStyle;
+fontdeco[0].onclick = updateStyle;
+fontdeco[1].onclick = updateStyle;
+fontdeco[2].onclick = updateStyle;
+
+
+
+
+
+
+
+
+let image = document.getElementsByClassName('cat-img')[0];
+let button1 = document.getElementsByClassName('button1')[0];
+let button2 = document.getElementsByClassName('button2')[0];
+
+
+button1.onclick = function() {
+    image.style.borderRadius = '0';
+    
+};
+
+button2.onclick = function() {
+    image.style.borderRadius = '50%';
+};
 
 
 

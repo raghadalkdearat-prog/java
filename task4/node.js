@@ -1,87 +1,58 @@
-
-let nAme = document.getElementById('user-name');                 
-let oRder = document.getElementsByTagName('select')[0];  
-let but = document.querySelector('.button'); 
-
-but.onclick = function() {
-   
-    let Name = nAme.value;
-    let Order = oRder.value;
-
-    document.write("Hello " + Name + "! Your order is " + Order);
-};
+let Name = document.getElementById("username");
+let Password = document.getElementById("password");
+let Phonenumber = document.getElementById("phonenumber");
+let Order = document.getElementById("orderselect");
+let Submitt = document.getElementById("submitt");
+let Container = document.getElementsByClassName("container");
 
 
-but.onmouseover = function(){
-    but.style.backgroundColor='red';
-}
-but.onmouseout = function(){
-      but.style.backgroundColor='white';
-}
+Submitt.addEventListener("click", function () {
+
+    let regex_name = /^\S+$/;
+    let result_name = regex_name.test(Name.value);
+
+    let regex_password = /^(?=.*\d).{8,}$/;
+    let result_password = regex_password.test(Password.value);
+
+    let regex_phone = /^07\d{8}$/;
+    let result_phone = regex_phone.test(Phonenumber.value);
+
+    console.log("Name:", result_name);
+    console.log("Password:", result_password);
+    console.log("Phone:", result_phone);
 
 
 
 
 
-let fontFamily = document.getElementById('font');  
-let fontSize = document.getElementById('size');  
-let fontdeco = document.querySelectorAll('.font-style');
-let text = document.querySelector('.cont2 p');
+    if (result_name && result_password && result_phone) {
 
-function updateStyle() {
-    
-    text.style.fontFamily = fontFamily.value;
-    text.style.fontSize = fontSize.value;
+        localStorage.setItem("name", Name.value);
+        sessionStorage.setItem("order", Order.value);
 
-   
-    if (fontdeco[0].checked) {
-        text.style.fontStyle = 'italic';
-    } else {
-        text.style.fontStyle = 'normal';
+        let Saved_name = localStorage.getItem("name");
+        let Saved_order = sessionStorage.getItem("order");
+
+        Container[0].innerHTML =
+            "Welcome ," + Saved_name +
+            "<br> <br>Name: " + Saved_name +
+            "<br><br>Saved Order: " + Saved_order;
+
+
+        Name.value = "";
+        Password.value = "";
+        Phonenumber.value = "";
+        Order.selectedIndex = 0;
     }
-
-   
-    if (fontdeco[1].checked) {
-        text.style.fontWeight = 'bold';
-    } else {
-        text.style.fontWeight = 'normal';
-    }
-
-    
-    if (fontdeco[2].checked) {
-        text.style.textDecoration = 'underline';
-    } else {
-        text.style.textDecoration = 'none';
-    }
-}
+  else if(!result_name){
+    alert("Username: must not be empty and must not contain spaces. ");
+  }
+   else if(!result_password){
+    alert("Password: at least 8 characters and contains at least one number.");
+  }
+   else if(!result_phone){
+    alert("Phone: exactly 10 digits and starts with 07.");
+  }
 
 
-fontFamily.onchange = updateStyle;
-fontSize.onchange = updateStyle;
-fontdeco[0].onclick = updateStyle;
-fontdeco[1].onclick = updateStyle;
-fontdeco[2].onclick = updateStyle;
-
-
-
-
-
-
-
-
-let image = document.getElementsByClassName('cat-img')[0];
-let button1 = document.getElementsByClassName('button1')[0];
-let button2 = document.getElementsByClassName('button2')[0];
-
-
-button1.onclick = function() {
-    image.style.borderRadius = '0';
-    
-};
-
-button2.onclick = function() {
-    image.style.borderRadius = '50%';
-};
-
-
-
+});

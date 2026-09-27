@@ -1,50 +1,50 @@
-let Name=prompt("enter your name: ");
-let Age=prompt("enter your age:");
-let Book=prompt("book name: ");
+let menue=[
+    {name:"pizza",price:"6$",category:"mainMeal",available:"yes"},
+    {name:"zinger",price:"3$",category:"mainMeal",available:"NO"},
+    {name:"burger",price:"6$",category:"mainMeal",available:"yes"},
+    {name:"frize",price:"2$",category:"sideMeal",available:"yes"},
+    {name:"Shawarma",price:"2.5$",category:"mainMeal",available:"yes"}
+];
 
-let User={
-    userName:Name,
-    userAge:Age,
-    userBook:Book,
-    stuts:"pending"
-};
 
-if( User.userAge<"13"){
-    User.stuts="Rejected - Underage";
-    alert("Rejected - Underage");
 
-}
-else{
-   if(User.userBook=="Clean Code" ||User.userBook=="JavaScript Info"||User.userBook=="Atomic Habits"){
-    User.stuts="Approved";
-    alert("Approved");
-   }
-   else{
-     User.stuts="Book Not Found";
-     alert("Book Not Found");
-   }
-}
-if( User.stuts=="Approved"){
-   if(User.userAge<"18"){
-    User.fee=0;
-   }
-   else{
-    User.fee=5;
-   }
 
-}
-if(User.userBook=="Clean Code"){
-    User.isPremium=true;
 
-}
-else{
-     User.isPremium=false;
+let foodname=prompt("enter your meal(pizza,zinger,burger,frize,Shawarma");
+let i=0;
+while (i < menue.length) {
+    
+  
+    if (menue[i].name === foodname && menue[i].available === "NO") {
+        alert("Sorry, " + foodname + " is not available!");
+       foodname=prompt("enter your meal(pizza,zinger,burger,frize,Shawarma");
+        i = 0;
+        continue;
+    }
+
+    i++; 
+    
 }
 
-for (let key in User) {
-    console.log(key + ": " + User[key]);
+
+
+
+
+
+function displayMenu(){
+ document.write("<p> menue list</p> <hr>");
+   for(let x of menue){
+    if(x.name==foodname){
+    document.write("<p> name:"+x.name+"<br></p>");
+     document.write("<p> price:"+x.price+"<br></p>");
+      document.write("<p> is it available:"+x.available+"<br></p>");
+       document.write("<p> category"+x.category+"<br></p>");
+    }
+
 }
-for (let key in User) {
- document.write("<p><strong>" + key + ":</strong> " + User[key] + "</p>");
 }
+
+displayMenu();
+
+
 

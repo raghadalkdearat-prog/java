@@ -1,67 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>DOM Manipulation</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div class="container">
 
- <fieldset class="container"> 
-     <h1 class="order">Order</h1>
- <form>
-<label class="name" for="user-name">Name:</label>
-<input type="text" id="user-name">
-<label class="select" for="meal-select">Choose your order:</label>
-<select id="meal-select" name="meal">
-    <option class="meal" value="Burger">Burger</option>
+    <form >
+<label class="name" for="username">Username:</label>
+<input type="text" id="username">
+<label class="pass" for="password">Password:</label>
+<input type="password" id="password">
+<label class="phone" for="phonenumber">Phone number:</label>
+<input type="text" id="phonenumber">
+<label class="order" for="orderselect">Order:</label>
+<select id="orderselect" name="meal">
+    <option  value="Burger">Burger</option>
      <option value="Shawrma" class="meal">Shawrma</option>
       <option value="Zinger" class="meal">Zinger</option>
 </select>
 
-
     </form>
-    <button class="button">submit</button>
-</fieldset>
-  <hr>
+    <button id="submitt">Submitt</button>
+</div>
 
+<h2 class="order-data"></h2>
 
-
-
-
-
-  <div class="cont1"><form>
-    <select id="font" name="font">
-       <option value="Time new roman">Time new roman</option> 
-       <option value="fantasy"> fantasy</option>
-    </select>
-
-     <select id="size" name="font">
-       <option value="10px">10px</option> 
-       <option value="20px"> 20px</option>
-    </select>
-
-  <input type="checkbox" class="font-style" value="Italic"> Italic
-<input type="checkbox" class="font-style" value="bold"> Bold
-<input type="checkbox" class="font-style" value="Underline"> Underline
-  </form></div>
     
-  <div class="cont2">
-<p>My name is Raghad</p>
-  </div>
 
 
-  <hr>
-
-  <p class="text">change image shape</p>
-  <img class="cat-img" src="https://tse3.mm.bing.net/th/id/OIP.f7w9Y4nVnuBH6ECGUegzXAHaFS?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" class="cat"><br>
-
-    <button type="button" class="button1">sequare</button>
-    <button type="button" class="button2">circle</button>
-
- 
-
-  <script src="node.js"></script>
+    
+    <script src="node.js"></script>
 </body>
 </html>
+
+

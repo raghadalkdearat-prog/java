@@ -1,41 +1,108 @@
 <!DOCTYPE html>
+<html>
+<head>
+    <title>Events Example</title>
+</head>
+<body>
+
+    <h2 id="result">Result will appear here</h2>
+
+    <button id="clickBtn">Click Me</button>
+
+    <br><br>
+
+    <input type="text" id="textInput" placeholder="Type something">
+
+    <br><br>
+
+    <button id="hoverBtn">Move mouse over me</button>
+
+    <br><br>
+
+    <form id="myForm">
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button type="submit">Submit Form</button>
+    </form>
+
+
+    <script>
+
+        let result = document.getElementById("result");
+
+        let clickBtn = document.getElementById("clickBtn");
+        let textInput = document.getElementById("textInput");
+        let hoverBtn = document.getElementById("hoverBtn");
+        let myForm = document.getElementById("myForm");
+        let nameInput = document.getElementById("nameInput");
+
+
+        // 1- click
+        clickBtn.addEventListener("click", function () {
+
+            result.innerHTML = "Button was clicked";
+
+        });
+
+
+        // 2- input
+        textInput.addEventListener("input", function () {
+
+            result.innerHTML = "You typed: " + textInput.value;
+
+        });
+
+
+        // 3- mouseover
+        hoverBtn.addEventListener("mouseover", function () {
+
+            result.innerHTML = "Mouse is over the button";
+
+        });
+
+
+        // 4- keydown
+        textInput.addEventListener("keydown", function (event) {
+
+            console.log("You pressed: " + event.key);
+
+        });
+
+
+        // 5- submit
+        myForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            result.innerHTML = "Welcome " + nameInput.value;
+
+        });
+
+    </script>
+
+</body>
+</html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-      <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div class="container">
+    <h1>TO-DO-LIST</h1>
 
-    <form >
-<label class="name" for="username">Username:</label>
-<input type="text" id="username">
-<label class="pass" for="password">Password:</label>
-<input type="password" id="password">
-<label class="phone" for="phonenumber">Phone number:</label>
-<input type="text" id="phonenumber">
-<label class="order" for="orderselect">Order:</label>
-<select id="orderselect" name="meal">
-    <option  value="Burger">Burger</option>
-     <option value="Shawrma" class="meal">Shawrma</option>
-      <option value="Zinger" class="meal">Zinger</option>
-</select>
+<input type="text" id="inputText" placeholder="please enter task name" >
+<button id="addButton">Add Task</button>
+<br><br>
 
-    </form>
-    <button id="submitt">Submitt</button>
+<div id="listTask">
+
+</div>
 </div>
 
-<h2 class="order-data"></h2>
 
-    
-
-
-    
-    <script src="node.js"></script>
+<script src="task.js"></script>
 </body>
 </html>
-
-
